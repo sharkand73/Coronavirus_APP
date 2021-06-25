@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
-import staticData from '../components/staticData';
 
-const DatesForm = ({processFilter}) => {
-    const data = staticData;
+const DatesForm = ({data, processFilter}) => {
     const [startDate, setStartDate] = useState(new Date("2020-01-31"));
     const [endDate, setEndDate] = useState(new Date());
 
@@ -15,13 +13,16 @@ const DatesForm = ({processFilter}) => {
 
     const handleForm = (e) => {
         e.preventDefault();
+        if (data){
         const newDataSet = data.filter(
             (dataItem) => 
             (new Date(dataItem.date) >= new Date(startDate)) 
             && (new Date(dataItem.date) <= new Date(endDate))
-        );
-        console.log(newDataSet[0]); 
-        processFilter(newDataSet);  
+        ); 
+        processFilter(newDataSet); 
+        }
+        else {
+            console.log('There is no API data!');} 
     }
 
     return (

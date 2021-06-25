@@ -7,7 +7,7 @@ const Graph1 = ({filteredData}) => {
     
     return(
         <div>
-            <h3>Graph 1</h3>
+            <h3>Graph 1 - Daily Cases over Time</h3>
             <Chart
             chartType="LineChart"
             data={graphData}

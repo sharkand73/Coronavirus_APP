@@ -7,7 +7,7 @@ const Graph3 = ({filteredData}) => {
     
     return(
         <div>
-            <h3>Graph 3</h3>
+            <h3>Graph 3 - Cumulative Cases over Time</h3>
             <Chart
             chartType="LineChart"
             data={graphData}
