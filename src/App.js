@@ -6,11 +6,39 @@ function App() {
 
   const [data, setData] = useState();
 
-  let baseRequest = "https://api.coronavirus.data.gov.uk/v1/data";
-  let area = "?filters=areaType=nation;areaName=scotland";
-  let structure = '&structure={"date":"date","newCases":"newCasesByPublishDate"}';
+const
+  areaType = "nation",
+  areaName = "scotland";
 
-  const fullRequest = baseRequest + area + structure; 
+const
+  filters = [
+      `areaType=${ areaType }`,
+      `areaName=${ areaName }`
+  ],
+  structure = {
+      date: "date",
+      name: "areaName",
+      code: "areaCode",
+      "dailyCases": "newCasesByPublishDate",
+      "cumulativeCases": "cumCasesByPublishDate",
+      "dailyDeaths": "newDeaths28DaysByPublishDate",
+      "cumulativeDeaths": "cumDeaths28DaysByPublishDate",
+      "hospitalCases": "hospitalCases",
+      "ICUCases": "covidOccupiedMVBeds"
+  };
+
+const
+  apiParams = `filters=${ filters.join(";") }&structure=${ JSON.stringify(structure) }`,
+  encodedParams = encodeURI(apiParams);
+  console.log(`/v1/data?${ encodedParams }`);
+
+const fullRequest = `https://api.coronavirus.data.gov.uk/v1/data?${ encodedParams }`;
+
+// let baseRequest = "https://api.coronavirus.data.gov.uk/v1/data";
+  // let area = "?filters=areaType=nation;areaName=scotland";
+  // let structure = '&structure={"date":"date","newCases":"newCasesByPublishDate"}';
+
+  // const fullRequest = baseRequest + area + structure; 
 
   const getData = function(){
     fetch(fullRequest)
@@ -18,7 +46,7 @@ function App() {
      .then(data => {setData(data.data)})
  };
 
-  useEffect(() => {getData()}, []);
+useEffect(() => {getData()}, []);
 
   return (
     <MainContainer data={data} />
