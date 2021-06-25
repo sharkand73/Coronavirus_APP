@@ -1,16 +1,82 @@
 body {
-  display: flex;
-  justify-content: center;
-}
-
-.main-container {
-  width: 80%;
-  background: gray;
+  margin: 0;
+  padding-top: 0;
+  height: 800px;
+  background-color: antiquewhite;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
+  margin: 0;
+  padding-top: 0;
+}
+
+#main {
+  
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  height: 800px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1 {
+  background-color: darksalmon;
+  padding: 15px;
+}
+
+.card{
+  margin-top: 20px;
+  border-width: 10px;
+  border-radius: 20px;
+  border-color: slateblue;
+  border-style: solid;
+}
+
+#today {
+  height: 200px;
+  width: 350px;
+  /* border-width: 10px;
+  border-radius: 20px;
+  border-color: slateblue;
+  border-style: solid; */
+  font-size:20px;
+}
+
+#graph {
+  height: 200px;
+  width: 350px;
+  /* border-width: 10px;
+  border-radius: 20px;
+  border-color: slateblue;
+  border-style: solid; */
+  font-size:20px;
+}
+
+
+
+.today-heading {
+  color: black;
+  font-weight: bold;
+  padding-right: 30px;
+  padding-top: 10px;
+}
+
+.today-data {
+  color: navy;
+  text-align: right;
+  padding-top: 10px;
+}
+
+/* .main-container {
+  width: 80%;
+  background: gray;
+} */
+
+header {
   text-align: center;
-  color: magenta;
+  color: navy;
 }
 
 button {
@@ -20,6 +86,11 @@ button {
 .date-input {
   width: 50%;
 }
+
+.graph-container {
+  width: 500px;
+  height: 350px;
+} 
 
 /* .App {
   text-align: center;
