@@ -24,6 +24,13 @@ header {
 h1 {
   background-color: darksalmon;
   padding: 15px;
+  margin-top: 0;
+}
+
+#main-container {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
 }
 
 .card{
@@ -35,8 +42,8 @@ h1 {
 }
 
 #today {
-  height: 200px;
-  width: 350px;
+  height: 400px;
+  width: 450px;
   /* border-width: 10px;
   border-radius: 20px;
   border-color: slateblue;

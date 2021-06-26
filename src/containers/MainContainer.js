@@ -17,10 +17,10 @@ const MainContainer = ({data}) => {
         return (
             <>
             <header>
-                <h1>Covid Information for the U.K.</h1>
+                <h1>Covid Information for Scotland</h1>
             </header>
-            <div id="main-container" className="card">
-                <LatestFigures latest={data[0]}/>
+            <div id="main-container">
+                <LatestFigures latest={data[0]} yesterday={data[1]} lastWeek={data[7]}/>
             </div>
             {/* <div className="card">
                 <Graph1 filteredData = {data}/>
