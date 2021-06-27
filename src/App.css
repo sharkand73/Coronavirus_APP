@@ -74,6 +74,7 @@ h1 {
   color: navy;
   text-align: right;
   padding-top: 10px;
+  padding-right: 10px;
 }
 
 /* .main-container {
@@ -85,6 +86,19 @@ header {
   text-align: center;
   color: navy;
 }
+
+.up {
+  color: red;
+}
+
+.down {
+  color: green;
+}
+
+.no-change {
+  color: gray;
+}
+
 
 button {
   width: 25%;

@@ -14,13 +14,19 @@ const MainContainer = ({data}) => {
 
     if (data){
 
+        const lastHospitalDataIndex = data.findIndex((item) => ((item.hospitalCases) && (item.ICUCases)));
+        const hospitalData = {
+            hospitalCases: data[lastHospitalDataIndex].hospitalCases,
+            ICUCases: data[lastHospitalDataIndex].ICUCases,
+            lag: lastHospitalDataIndex
+        }
         return (
             <>
             <header>
                 <h1>Covid Information for Scotland</h1>
             </header>
             <div id="main-container">
-                <LatestFigures latest={data[0]} yesterday={data[1]} lastWeek={data[7]}/>
+                <LatestFigures latest={data[0]} lastWeek={data[7]} hospitalData={hospitalData}/>
             </div>
             {/* <div className="card">
                 <Graph1 filteredData = {data}/>
