@@ -25,12 +25,13 @@ const LatestFigures = ({latest, lastWeek, hospitalData}) => {
 
 return (
     <div id="today" className="card">
+        <h2>{convertDate2(latest.date)}</h2>
         <table>
             <tbody>
                 <tr>
-                    <td className='today-heading'>Date:</td> 
-                    <td className='today-data'>{convertDate2(latest.date)}</td>
-                    <td className='today-data small-print'>(c/w LAST WEEK)</td>
+                    <td className='today-heading'></td> 
+                    <td className='today-header small-print'>FIGURES</td>
+                    <td className='today-header small-print'>(c/w LAST WEEK)</td>
                 </tr>
                 <tr className="clickable-row">
                     <td className='today-heading'>Daily Cases:</td> 
@@ -62,7 +63,9 @@ return (
                     <td className='today-data'>{nwc(latest.cumulativeDeaths)}</td>
                     <td></td>
                 </tr>
-                
+                <tr><td><br></br></td></tr>
+                <tr><td><br></br></td></tr>
+
             </tbody>
         </table>
         <p className="small-print">
