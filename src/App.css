@@ -104,6 +104,13 @@ header {
   font-size: 16px;
 }
 
+.clickable-row:hover {
+  background-color: lightsalmon;
+}
+
+
+
+
 
 button {
   width: 25%;

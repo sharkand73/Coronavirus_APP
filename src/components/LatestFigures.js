@@ -32,33 +32,35 @@ return (
                     <td className='today-data'>{convertDate2(latest.date)}</td>
                     <td className='today-data small-print'>(c/w LAST WEEK)</td>
                 </tr>
-                <tr>
+                <tr className="clickable-row">
                     <td className='today-heading'>Daily Cases:</td> 
                     <td className='today-data'>{nwc(latest.dailyCases)}</td>
                     <td className='today-data'>{getDelta(lastWeek.dailyCases, latest.dailyCases)}</td>
                 </tr>
-                <tr>
+                <tr className="clickable-row">
                     <td className='today-heading'>Hospitalised*:</td> 
                     <td className='today-data'>{hospitalData.hospitalCases}</td>
                     <td className='today-data'>{getDelta(lastWeek.hospitalCases, hospitalData.hospitalCases)}</td>
                 </tr>
-                <tr>
+                <tr className="clickable-row">
                     <td className='today-heading'>In Intensive Care*:</td> 
                     <td className='today-data'>{hospitalData.ICUCases}</td>
                     <td className='today-data'>{getDelta(lastWeek.ICUCases, hospitalData.ICUCases)}</td>
                 </tr>
-                <tr>
+                <tr className="clickable-row">
                     <td className='today-heading'>Daily Deaths:</td> 
                     <td className='today-data'>{nwc(latest.dailyDeaths)}</td>
                     <td className='today-data'>{getDelta(lastWeek.dailyDeaths, latest.dailyDeaths)}</td>
                 </tr>
-                <tr>
+                <tr className="clickable-row">
                     <td className='today-heading'>Cumulative Cases:</td> 
                     <td className='today-data'>{nwc(latest.cumulativeCases)}</td>
+                    <td></td>
                 </tr>
-                <tr>
+                <tr className="clickable-row">
                     <td className='today-heading'>Cumulative Deaths:</td> 
                     <td className='today-data'>{nwc(latest.cumulativeDeaths)}</td>
+                    <td></td>
                 </tr>
                 
             </tbody>
