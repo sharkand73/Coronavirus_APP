@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
 import { Chart } from "react-google-charts";
 
 const Graph2 = ({filteredData}) => {
-    const graphData = filteredData.map((item) => {return [new Date(item.date), item.dailyDeaths]});
-    graphData.unshift(["Date", "Daily Deaths"]);
+    const graphData = filteredData.map((item) => {return [new Date(item.date), item.hospitalCases]});
+    graphData.unshift(["Date", "Hospital Cases"]);
     
     return(
         <div>
-            <h3>Graph 2 - Daily Deaths over Time</h3>
+            <h3>Graph 2 - Hospital Cases over Time</h3>
             <Chart
             chartType="LineChart"
             data={graphData}
@@ -16,8 +16,6 @@ const Graph2 = ({filteredData}) => {
             legendToggle
             />
         </div>
-
     )
-}
-
+    }
 export default Graph2;

@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
 import { Chart } from "react-google-charts";
 
 const Graph3 = ({filteredData}) => {
-    const graphData = filteredData.map((item) => {return [new Date(item.date), item.cumulativeCases]});
-    graphData.unshift(["Date", "Cumulative Cases"]);
+    const graphData = filteredData.map((item) => {return [new Date(item.date), item.ICUCases]});
+    graphData.unshift(["Date", "I.C.U. Cases"]);
     
     return(
         <div>
-            <h3>Graph 3 - Cumulative Cases over Time</h3>
+            <h3>Graph 3 - I.C.U. Cases over Time</h3>
             <Chart
             chartType="LineChart"
             data={graphData}
@@ -17,6 +17,5 @@ const Graph3 = ({filteredData}) => {
             />
         </div>
     )
-}
-
+    }
 export default Graph3;

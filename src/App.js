@@ -30,7 +30,7 @@ const
 const
   apiParams = `filters=${ filters.join(";") }&structure=${ JSON.stringify(structure) }`,
   encodedParams = encodeURI(apiParams);
-  console.log(`/v1/data?${ encodedParams }`);
+  //console.log(`/v1/data?${ encodedParams }`);
 
 const fullRequest = `https://api.coronavirus.data.gov.uk/v1/data?${ encodedParams }`;
 
@@ -40,13 +40,10 @@ const fullRequest = `https://api.coronavirus.data.gov.uk/v1/data?${ encodedParam
 
   // const fullRequest = baseRequest + area + structure; 
 
-  const getData = function(){
-    fetch(fullRequest)
-     .then(results => results.json() )
-     .then(data => {setData(data.data)})
- };
-
-useEffect(() => {getData()}, []);
+ 
+useEffect(() => {fetch(fullRequest)
+  .then(results => results.json() )
+  .then(data => {setData(data.data)})}, [fullRequest]);
 
   return (
     <MainContainer data={data} />
