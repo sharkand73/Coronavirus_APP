@@ -1,6 +1,7 @@
 import React, { useState} from 'react';
 import '../App.css';
 import LatestFigures from '../components/LatestFigures';
+import {convertDate2} from '../components/functions';
 
 
 //import DatesForm from '../components/DatesForm';
@@ -28,14 +29,14 @@ const MainContainer = ({data}) => {
     if (data){
 
         const lastHospitalDataIndex = data.findIndex((item) => ((item.hospitalCases) && (item.ICUCases)));
-        let lagInfo;
-        switch(lastHospitalDataIndex){
-            case 0: lagInfo = "today";
-            break;
-            case 1: lagInfo = "yesterday";
-            break;
-            default: lagInfo = `${lastHospitalDataIndex} days ago`;
-        }  
+        let lagInfo = convertDate2(data[lastHospitalDataIndex].date);
+        // switch(lastHospitalDataIndex){
+        //     case 0: lagInfo = "today";
+        //     break;
+        //     case 1: lagInfo = "yesterday";
+        //     break;
+        //     default: lagInfo = `${lastHospitalDataIndex} days ago`;
+        // }  
            
         const hospitalData = {
             hospitalCases: data[lastHospitalDataIndex].hospitalCases,
