@@ -138,6 +138,14 @@ button {
   height: 350px;
 } 
 
+.x-container {
+  display: flex;
+  justify-content: flex-end;
+  color: red;
+  font-weight: bold;
+  
+}
+
 /* .App {
   text-align: center;
 }

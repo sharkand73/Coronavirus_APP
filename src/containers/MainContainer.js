@@ -6,25 +6,12 @@ import {convertDate2} from '../components/functions';
 
 //import DatesForm from '../components/DatesForm';
 //import Panel from '../components/Panel';
-import Graph1 from '../components/Graph1';
-import Graph2 from '../components/Graph2';
-import Graph3 from '../components/Graph3';
-import Graph4 from '../components/Graph4';
-import Graph5 from '../components/Graph5';
-import Graph6 from '../components/Graph6';
+
+import CurrentGraph from '../components/CurrentGraph';
 
 const MainContainer = ({data}) => {
 
     const [graphSelected, setGraphSelected] = useState(0);
-
-    const allGraphs = [
-                        <Graph1 filteredData = {data}/>,
-                        <Graph2 filteredData = {data}/>,
-                        <Graph3 filteredData = {data}/>,
-                        <Graph4 filteredData = {data}/>,
-                        <Graph5 filteredData = {data}/>,
-                        <Graph6 filteredData = {data}/>
-                        ]
 
     if (data){
 
@@ -46,15 +33,21 @@ const MainContainer = ({data}) => {
 
         return (
             <>
-            <header>
-                <h1>Covid Information for Scotland</h1>
-            </header>
-            <div id="main-container">
-                <LatestFigures latest={data[0]} lastWeek={data[7]} hospitalData={hospitalData} setGraphSelected={setGraphSelected}/>
-            </div>
-            <div className="card">
-                {allGraphs[graphSelected]}
-            </div>
+                <header>
+                    <h1>Covid Information for Scotland</h1>
+                </header>
+                <div id="main-container">
+                    {graphSelected ? 
+                    <CurrentGraph graphSelected={graphSelected} 
+                                setGraphSelected={setGraphSelected}
+                                data={data}/> :
+                    <LatestFigures latest={data[0]} 
+                                    lastWeek={data[7]} 
+                                    hospitalData={hospitalData} 
+                                    setGraphSelected={setGraphSelected}
+                                    />                
+                    }
+                </div>
             </>
         )
     }
