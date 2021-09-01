@@ -40,7 +40,7 @@ h2 {
 
 .card{
   width: 50%;
-  min-width: 600px;
+  min-width: 320px;
   background-color: white;
   margin-top: 20px;
   border-width: 10px;
