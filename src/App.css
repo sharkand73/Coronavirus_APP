@@ -14,9 +14,9 @@ header {
 #main {
   
   display: flex;
-  justify-content: space-between;
-  align-content: space-between;
-  height: 800px;
+  justify-content: center;
+  align-content: center;
+  
   margin-top: 0;
   padding-top: 0;
 }
@@ -39,6 +39,8 @@ h2 {
 }
 
 .card{
+  width: 50%;
+  min-width: 600px;
   background-color: white;
   margin-top: 20px;
   border-width: 10px;
@@ -49,8 +51,8 @@ h2 {
 }
 
 #today {
-  height: 400px;
-  width: 530px;
+  height: 100%;
+  width: 40%;
   /* border-width: 10px;
   border-radius: 20px;
   border-color: slateblue;
@@ -59,8 +61,8 @@ h2 {
 }
 
 #graph {
-  height: 200px;
-  width: 350px;
+  height: 50%;
+  width: 100%;
   /* border-width: 10px;
   border-radius: 20px;
   border-color: slateblue;
@@ -134,8 +136,8 @@ button {
 }
 
 .graph-container {
-  width: 500px;
-  height: 350px;
+  width: 100%;
+  height: 50%;
 } 
 
 .x-container {
