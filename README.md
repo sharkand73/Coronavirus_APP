@@ -5,9 +5,13 @@ This React app was a weekend homework project on the CodeClan "Professional Soft
 It extracts COVID data from a public UK Government API: https://api.coronavirus.data.gov.uk/v1/data and displays some of it in a table.  Although it is from a UK source, the data has been filtered for Scotland.  When you click on a row, a graph for the corresponding statistic appears.
 
 
-## Running the app
+## App demo
 
-Clone the repo and in the project directory, run: 
+The app has been deployed here:  https://coronavirusdashboard-5356e.web.app/
+
+## Downloading the code and runing the app
+
+Clone the repository and in the project directory, run: 
 
 ### `npm install`
 
